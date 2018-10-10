@@ -1,0 +1,116 @@
+﻿@model Week5Assignment.Models.CreateEmployeeModel
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Create</title>
+</head>
+<body>
+	<div>
+		<form>
+			<div class="row">
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.FirstName)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.FirstName)
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.Department)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.Department)
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.MiddleName)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.MiddleName)
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.JobTitle)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.JobTitle)
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.LastName)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.LastName)
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.Salary)
+				</div>
+				<div class="col-md-1">
+					@Html.EditorFor(Model => Model.Salary)
+				</div>
+				<div class="col-md-2">
+					<div class="dropdown">
+						<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Salary Type
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#">Annual</a>
+							<a class="dropdown-item" href="#">Hourly</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.BirthDate)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.BirthDate)
+					<p>Calendar icon: <span class="glyphicon glyphicon-calendar"></span></p>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.EmployeeID)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.EmployeeID)
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.HireDate)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.HireDate)
+					<p>Calendar icon: <span class="glyphicon glyphicon-calendar"></span></p>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					@Html.LabelFor(Model => Model.AvailableHours)
+				</div>
+				<div class="col-md-3">
+					@Html.EditorFor(Model => Model.AvailableHours)
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8"></div>
+				<div class="col-md-2">
+					<button class="btn btn-primary" type="submit"> Create </button>
+				</div>
+				<div class="col-md-2">
+					<button class="btn btn-secondary" type="reset"> Clear </button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
