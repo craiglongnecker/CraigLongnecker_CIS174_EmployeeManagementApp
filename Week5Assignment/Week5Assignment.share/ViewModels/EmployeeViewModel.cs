@@ -25,9 +25,4 @@ namespace Week5Assignment.share.ViewModels
         public String SalaryTypeString => SalaryType.ToString();
         public String AvailableHours { get; set; }
     }
-//    public enum SalaryType
-//    {
-//        Hourly,
-//        Annual
-//    }
 }

@@ -8,11 +8,12 @@ Craig Longnecker
 Operating System: Windows 10
 Microsoft Visual Studio 2017 Enterprise
 CIS 174
-Name of Homework Assignment: Week 5 Assignment
-Program Description: Create a proogram with web pages that show the list of
+Name of Homework Assignment: Week 7 Assignment
+Program Description: Create a program with web pages that show the list of
     employees and one that allows a person to add new employees into the
     employee management system so that employee information can be tracked
-    and that can run reports on user data.
+    and that can run reports on user data.  This was done in Week 5.  In 
+    Week 7, a layout page, an all employees page, and a menu were added.
 Academic Honesty:
 I attest that this is my original work.
 I have not used unauthorized source code, either modified or unmodified.

@@ -4,107 +4,123 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width" />
-	<title>Create</title>
+	<title>Enter New Employee</title>
 </head>
 <body>
 	<div>
 		<form>
 			<div class="row">
+				<div class="col-md-1"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.FirstName)
+					@*@Html.LabelFor(Model => Model.FirstName)*@
+					<label for="FirstName">First Name</label>
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.FirstName)
 				</div>
-				<div class="col-md-2"></div>
 				<div class="col-md-2">
 					@Html.LabelFor(Model => Model.Department)
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.Department)
 				</div>
+				<div class="col-md-1"></div>
 			</div>
 			<div class="row">
+				<div class="col-md-1"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.MiddleName)
+					@*@Html.LabelFor(Model => Model.MiddleName)*@
+					<label for="MiddleName">Middle Name</label>
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.MiddleName)
 				</div>
-				<div class="col-md-2"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.JobTitle)
+					@*@Html.LabelFor(Model => Model.JobTitle)*@
+					<label for="Job Title">Job Title</label>
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.JobTitle)
 				</div>
+				<div class="col-md-1"></div>
 			</div>
 			<div class="row">
+				<div class="col-md-1"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.LastName)
+					@*@Html.LabelFor(Model => Model.LastName)*@
+					<label for="LastName">Last Name</label>
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.LastName)
 				</div>
-				<div class="col-md-2"></div>
 				<div class="col-md-2">
 					@Html.LabelFor(Model => Model.Salary)
 				</div>
-				<div class="col-md-1">
+				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.Salary)
 				</div>
-				<div class="col-md-2">
-					<div class="dropdown">
-						<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Salary Type
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#">Annual</a>
-							<a class="dropdown-item" href="#">Hourly</a>
-						</div>
-					</div>
-				</div>
+				<div class="col-md-1"></div>
 			</div>
 			<div class="row">
+				<div class="col-md-1"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.BirthDate)
+					@*@Html.LabelFor(Model => Model.BirthDate)*@
+					<label for="BirthDate">Birth Date</label>
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.BirthDate)
-					<p>Calendar icon: <span class="glyphicon glyphicon-calendar"></span></p>
 				</div>
-				<div class="col-md-2"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.EmployeeID)
+					@Html.LabelFor(Model => Model.SalaryType)
+					<label for="SalaryType">Salary Type</label>
 				</div>
 				<div class="col-md-3">
-					@Html.EditorFor(Model => Model.EmployeeID)
+					@{
+						List<SelectListItem> listItems = new List<SelectListItem>();
+						listItems.Add(new SelectListItem
+						{
+							Text = "Annual",
+							Value = "Annual"
+						});
+						listItems.Add(new SelectListItem
+						{
+							Text = "Hourly",
+							Value = "Hourly",
+						});
+					}
+					@Html.DropDownListFor(Model => Model.SalaryType, listItems, "-- Select Salary Type --")
 				</div>
+				<div class="col-md-1"></div>
 			</div>
 			<div class="row">
+				<div class="col-md-1"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.HireDate)
+					@*@Html.LabelFor(Model => Model.HireDate)*@
+					<label for="HireDate">Hire Date</label>
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.HireDate)
-					<p>Calendar icon: <span class="glyphicon glyphicon-calendar"></span></p>
 				</div>
-				<div class="col-md-2"></div>
 				<div class="col-md-2">
-					@Html.LabelFor(Model => Model.AvailableHours)
+					@*@Html.LabelFor(Model => Model.AvailableHours)*@
+					<label for="AvailableHours">Available Hours</label>
 				</div>
 				<div class="col-md-3">
 					@Html.EditorFor(Model => Model.AvailableHours)
 				</div>
+				<div class="col-md-1"></div>
 			</div>
+			<div class="row"></div>
+			<div class="col-md-12"></div>
 			<div class="row">
 				<div class="col-md-8"></div>
-				<div class="col-md-2">
+				<div class="col-md-1">
 					<button class="btn btn-primary" type="submit"> Create </button>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-1">
 					<button class="btn btn-secondary" type="reset"> Clear </button>
 				</div>
+				<div class="col-md-2"></div>
 			</div>
 		</form>
 	</div>

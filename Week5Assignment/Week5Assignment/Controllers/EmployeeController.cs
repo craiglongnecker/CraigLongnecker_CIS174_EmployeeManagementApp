@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using Week5Assignment.share.Orchestrator;
 using Week5Assignment.share.ViewModels;
 using Week5Assignment.Models;
-using Week5Assignment.domain.Entities;
 
 namespace Week5Assignment.Controllers
 {
@@ -20,9 +16,9 @@ namespace Week5Assignment.Controllers
         {
         
             var employeeDisplayModel = new EmployeeDisplayModel
-                (
+            {
                 Employee = await _employeeOrchestrator.GetAllEmployees()
-                );
+            };
             return View(employeeDisplayModel);
         }
 

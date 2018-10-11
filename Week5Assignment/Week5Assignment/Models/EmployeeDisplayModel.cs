@@ -8,10 +8,6 @@ namespace Week5Assignment.Models
 {
     public class EmployeeDisplayModel
     {
-        public EmployeeDisplayModel(List<EmployeeViewModel> list)
-        {
-        }
-
         public List<EmployeeViewModel> Employee { get; set; }
     }
 }
