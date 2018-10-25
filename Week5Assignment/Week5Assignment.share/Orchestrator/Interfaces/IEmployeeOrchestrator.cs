@@ -11,5 +11,7 @@ namespace Week5Assignment.share.Orchestrator.Interfaces
     {
         Task<List<EmployeeViewModel>> GetAllEmployees();
         Task<int> CreateEmployee(EmployeeViewModel employee);
+        Task<bool> UpdateEmployee(EmployeeViewModel employee);
+        Task<EmployeeViewModel> SearchEmployee(string searchString);
     }
 }
