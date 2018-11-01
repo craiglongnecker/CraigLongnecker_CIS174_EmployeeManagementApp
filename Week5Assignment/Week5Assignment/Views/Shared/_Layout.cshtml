@@ -7,7 +7,6 @@
 	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 	<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<script src="~/Scripts/modernizr-2.6.2.js"></script>
-	<script src="~/Scripts/Employee/employee.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -25,6 +24,7 @@
 					<a class="dropdown-item" href="@Url.Action("Index", "Employee")">View All Employees</a>
 					<a class="dropdown-item" href="@Url.Action("Create", "Employee")">Enter New Employee</a>
 					<a class="dropdown-item" href="@Url.Action("Update", "Employee")">Update Employee</a>
+					<a class="dropdown-item" href="@Url.Action("YearsEmployed", "Employee")">Employees: Years Employed and Anniversaries</a>
 				</div>
 			</li>
 		</ul>
@@ -38,13 +38,6 @@
             <p>&copy; @DateTime.Now.Year - Craig Longnecker</p>
         </footer>
     </div>
-	<script>
-		$(document).ready(function () {
-			$('.datetimepicker').datetimepicker({
-			format: 'lll'
-			});
-		});
-	</script>
     <script src="~/Scripts/jquery-3.0.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

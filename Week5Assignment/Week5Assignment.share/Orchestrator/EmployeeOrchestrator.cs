@@ -111,5 +111,16 @@ namespace Week5Assignment.share.Orchestrator
 
             return true;
         }
+
+//        public async Task<List<YearsEmployedModel>> GetYearsEmployed()
+//        {
+//            var employees = await _employeeContext.Employees.Select(x => new YearsEmployedModel
+//            {
+//                FirstName = x.FirstName,
+//                LastName = x.LastName,
+//                Department = x.Department
+//            }).ToListAsync();
+//            return employees;
+//        }
     }
 }

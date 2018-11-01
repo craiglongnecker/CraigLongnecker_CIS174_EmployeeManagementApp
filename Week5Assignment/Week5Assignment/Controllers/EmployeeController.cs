@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Week5Assignment.share.Orchestrator;
+using Week5Assignment.share.Orchestrator.Interfaces;
 using Week5Assignment.share.ViewModels;
 using Week5Assignment.Models;
 
@@ -9,7 +10,12 @@ namespace Week5Assignment.Controllers
 {
     public class EmployeeController : Controller
     {
-        private EmployeeOrchestrator _employeeOrchestrator = new EmployeeOrchestrator();
+        private readonly IEmployeeOrchestrator _employeeOrchestrator;
+
+        public EmployeeController(IEmployeeOrchestrator employeeOrchestrator)
+        {
+            _employeeOrchestrator = employeeOrchestrator;
+        }
 
         // GET: Employee
         public async Task<ActionResult> Index()
@@ -76,5 +82,15 @@ namespace Week5Assignment.Controllers
 
             return Json(viewModel, JsonRequestBehavior.AllowGet);
         }
+  
+//        public async Task<ActionResult> YearsEmployed()
+//        {
+
+//            var yearsEmployedModel = new YearsEmployedModel
+//            {
+//                Employee = await _employeeOrchestrator.GetYearsEmployed()
+//            };
+//            return View(yearsEmployedModel);
+//        }
     }
 }

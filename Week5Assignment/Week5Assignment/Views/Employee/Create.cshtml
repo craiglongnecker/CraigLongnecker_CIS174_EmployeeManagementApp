@@ -1,5 +1,7 @@
 ﻿@model Week5Assignment.Models.CreateEmployeeModel
 
+<script src="~/Scripts/Employee/employee.js" type="text/javascript"></script>
+
 <!DOCTYPE html>
 
 <html>
@@ -66,11 +68,10 @@
 			<div class="row">
 				<div class="col-md-1"></div>
 				<div class="col-md-2">
-					@*@Html.LabelFor(Model => Model.BirthDate)*@
 					<label for="BirthDate">Birth Date</label>
 				</div>
 				<div class="col-md-3">
-					@Html.EditorFor(Model => Model.BirthDate)
+					<input id="BirthDate" type="date" class="form-control" />
 				</div>
 
 				<div class="col-md-2">
@@ -125,7 +126,7 @@
 					<button class="btn btn-primary margin-top-md margin-left-md" type="submit">Create</button>
 				</div>
 				<div class="col-md-1">
-					<button class="btn btn-secondary margin-top-md margin-left-md" type="reset">Clear</button>
+					<button class="btn btn-secondary margin-top-md margin-left-md" onclick="clearInput()">Clear</button>
 				</div>
 				<div class="col-md-2"></div>
 			</div>

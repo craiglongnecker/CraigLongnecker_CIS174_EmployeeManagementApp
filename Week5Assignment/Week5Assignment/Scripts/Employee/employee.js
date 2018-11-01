@@ -9,8 +9,8 @@
 		$("#firstName").val(data.FirstName);
 		$("#middleName").val(data.MiddleName);
 		$("#lastName").val(data.LastName);
-		$("#birthDate").val(data.BirthDate);
-		$("#hireDate").val(data.HireDate);
+		$("#birthDate").val(JsonDateToIsoDate(data.BirthDate));
+		$("#hireDate").val(JsonDateToIsoDate(data.HireDate));
 		$("#department").val(data.Department);
 		$("#jobTitle").val(data.JobTitle);
 		$("#salary").val(data.Salary);
@@ -57,24 +57,28 @@ function updateEmployee() {
 			$("#errorMessage").removeClass("hidden")
 				.addClass("visible");
 		}
-		});
+		});	
+}
 
-	function clearSearch() {
-		$("#searchString").val(null);
-	}
+function clearSearch() {
+	$("#searchString").val(null);
+}
 
-	function clearInput() {
-		$("#employeeId").val(null);
-		$("#firstName").val(null);
-		$("#middleName").val(null);
-		$("#lastName").val(null);
-		$("#birthDate").val(null);
-		$("#hireDate").val(null);
-		$("#department").val(null);
-		$("#jobTitle").val(null);
-		$("#salary").val(null);
-		$("#salaryType").val(null);
-		$("#availableHours").val(null);
-	}
+function clearInput() {
+	$("#employeeId").val(null);
+	$("#firstName").val(null);
+	$("#middleName").val(null);
+	$("#lastName").val(null);
+	$("#birthDate").val(null);
+	$("#hireDate").val(null);
+	$("#department").val(null);
+	$("#jobTitle").val(null);
+	$("#salary").val(null);
+	$("#salaryType").val(null);
+	$("#availableHours").val(null);
+}
+
+function JsonDateToIsoDate(date) {
+	return new Date(parseInt(date.replace('/Date(', ''))).toISOString().substr(0, 10);
 }
 
