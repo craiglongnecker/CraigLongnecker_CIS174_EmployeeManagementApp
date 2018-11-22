@@ -1,4 +1,11 @@
-﻿@model Week5Assignment.Models.YearsEmployedModel
+﻿@model Week5Assignment.Models.EmployeeDisplayModel
+
+@{
+	if (Session["userID"] == null)
+	{
+		Response.Redirect("/Login/Login");
+	}
+}
 
 <!DOCTYPE html>
 
@@ -18,23 +25,29 @@
 						<th>Last Name</th>
 						<th>Department</th>
 						<th>Years of Employment</th>
-						<th>Anniversary</th>
+						<th>Last Anniversary</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach (var employee in Model.Employee)
 					{
-						<tr>
-							<td>
-								@employee.FirstName
-							</td>
-							<td>
-								@employee.LastName
-							</td>
-							<td>
-								@employee.Department
-							</td>
-						</tr>
+					<tr>
+						<td>
+							@employee.FirstName
+						</td>
+						<td>
+							@employee.LastName
+						</td>
+						<td>
+							@employee.Department
+						</td>
+						<td>
+							@employee.YearsSinceHired
+						</td>
+						<td>
+							@employee.Anniversary
+						</td>
+					</tr>
 					}
 				</tbody>
 			</table>

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Week5Assignment.share.Services.Interfaces;
 using Week5Assignment.share.ViewModels;
 
@@ -19,22 +15,22 @@ namespace Week5Assignment.share.Services
 
         public bool IsTodayYourBirthday(EmployeeViewModel employee)
         {
-            return employee.BirthDate?.DayOfYear == _dateTimeService.Now().DayOfYear;
+            return employee.BirthDate.DayOfYear == _dateTimeService.Now().DayOfYear;
         }
 
         public bool IsTodayNotYourBirthday(EmployeeViewModel employee)
         {
-            return employee.BirthDate?.DayOfYear == _dateTimeService.Now().DayOfYear;
+            return employee.BirthDate.DayOfYear == _dateTimeService.Now().DayOfYear;
         }
 
         public bool IsTodayYourAnniversary(EmployeeViewModel employee)
         {
-            return employee.HireDate?.DayOfYear == _dateTimeService.Now().DayOfYear;
+            return employee.HireDate.DayOfYear == _dateTimeService.Now().DayOfYear;
         }
 
         public bool IsTodayNotYourAnniversary(EmployeeViewModel employee)
         {
-            return employee.HireDate?.DayOfYear == _dateTimeService.Now().DayOfYear;
+            return employee.HireDate.DayOfYear == _dateTimeService.Now().DayOfYear;
         }
 
         public int GetAge(DateTime BirthDate)

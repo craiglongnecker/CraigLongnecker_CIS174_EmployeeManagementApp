@@ -1,10 +1,6 @@
 ﻿using AutoMoq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Week5Assignment.share.Services;
 using Week5Assignment.share.Services.Interfaces;
 using Week5Assignment.share.ViewModels;

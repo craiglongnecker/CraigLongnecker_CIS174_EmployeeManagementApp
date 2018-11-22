@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Week5Assignment.share.Orchestrator;
 using Week5Assignment.share.Orchestrator.Interfaces;
 using Week5Assignment.share.ViewModels;
 using Week5Assignment.Models;
@@ -32,6 +31,7 @@ namespace Week5Assignment.Controllers
         {
             if(string.IsNullOrWhiteSpace(employee.FirstName))
                 return View();
+
             var updateCount = await _employeeOrchestrator.CreateEmployee(new EmployeeViewModel
             {
                 EmployeeID = Guid.NewGuid(),
@@ -58,6 +58,7 @@ namespace Week5Assignment.Controllers
         {
             if (employee.EmployeeID == Guid.Empty)
                 return Json(false, JsonRequestBehavior.AllowGet);
+
             var result = await _employeeOrchestrator.UpdateEmployee(new EmployeeViewModel
             {
                 EmployeeID = employee.EmployeeID,
@@ -83,14 +84,14 @@ namespace Week5Assignment.Controllers
             return Json(viewModel, JsonRequestBehavior.AllowGet);
         }
   
-//        public async Task<ActionResult> YearsEmployed()
-//        {
+        public async Task<ActionResult> YearsEmployed()
+        {
 
-//            var yearsEmployedModel = new YearsEmployedModel
-//            {
-//                Employee = await _employeeOrchestrator.GetYearsEmployed()
-//            };
-//            return View(yearsEmployedModel);
-//        }
+            var yearsEmployedModel = new EmployeeDisplayModel
+            {
+                Employee = await _employeeOrchestrator.GetAllEmployees()
+            };
+            return View(yearsEmployedModel);
+        }
     }
 }

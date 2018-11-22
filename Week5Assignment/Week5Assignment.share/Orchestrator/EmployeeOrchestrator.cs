@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Week5Assignment.domain;
 using Week5Assignment.domain.Entities;
@@ -54,7 +52,8 @@ namespace Week5Assignment.share.Orchestrator
                 Salary = x.Salary,
                 SalaryType = x.SalaryType,
                 AvailableHours = x.AvailableHours
-            }).ToListAsync();
+
+    }).ToListAsync();
             return employees;
         }
 
@@ -111,16 +110,5 @@ namespace Week5Assignment.share.Orchestrator
 
             return true;
         }
-
-//        public async Task<List<YearsEmployedModel>> GetYearsEmployed()
-//        {
-//            var employees = await _employeeContext.Employees.Select(x => new YearsEmployedModel
-//            {
-//                FirstName = x.FirstName,
-//                LastName = x.LastName,
-//                Department = x.Department
-//            }).ToListAsync();
-//            return employees;
-//        }
     }
 }

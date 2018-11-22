@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 /**==========================================================
 Craig Longnecker
 Operating System: Windows 10
@@ -28,8 +24,8 @@ namespace Week5Assignment.domain.Entities
         public String FirstName { get; set; }
         public String MiddleName { get; set; }
         public String LastName { get; set; }
-        public DateTime? BirthDate { get; set; }
-        public DateTime? HireDate { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime HireDate { get; set; }
         public String Department { get; set; }
         public String JobTitle { get; set; }
         public Decimal Salary { get; set; }

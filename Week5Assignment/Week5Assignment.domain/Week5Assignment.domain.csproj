@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="EmployeeContext.cs" />
     <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\Login.cs" />
     <Compile Include="Migrations\201810032150093_InitialDatabaseCreationWithEmployees.cs" />
     <Compile Include="Migrations\201810032150093_InitialDatabaseCreationWithEmployees.Designer.cs">
       <DependentUpon>201810032150093_InitialDatabaseCreationWithEmployees.cs</DependentUpon>
@@ -61,6 +62,10 @@
     <Compile Include="Migrations\201810060104141_AddTwoRowsInDatabase.cs" />
     <Compile Include="Migrations\201810060104141_AddTwoRowsInDatabase.Designer.cs">
       <DependentUpon>201810060104141_AddTwoRowsInDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811112255118_Add Years Employed Page.cs" />
+    <Compile Include="Migrations\201811112255118_Add Years Employed Page.Designer.cs">
+      <DependentUpon>201811112255118_Add Years Employed Page.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810060104141_AddTwoRowsInDatabase.resx">
       <DependentUpon>201810060104141_AddTwoRowsInDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811112255118_Add Years Employed Page.resx">
+      <DependentUpon>201811112255118_Add Years Employed Page.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

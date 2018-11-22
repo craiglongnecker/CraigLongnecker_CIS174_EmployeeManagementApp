@@ -1,5 +1,12 @@
 ﻿@model Week5Assignment.Models.UpdateEmployeeModel
 
+@{
+	if (Session["userID"] == null)
+	{
+		Response.Redirect("/Login/Login");
+	}
+}
+
 <script src="~/Scripts/Employee/employee.js" type="text/javascript"></script>
 
 <h2>Update Employee</h2>
@@ -81,13 +88,13 @@
 		<label>Birth Date</label>
 	</div>
 	<div class="col-md-3">
-		<input id="birthDate" type="text" class="form-control" />
+		<input id="birthDate" type="date" class="form-control" />
 	</div>
 	<div class="col-md-2">
 		<label>Salary Type</label>
 	</div>
 	<div class="col-md-3">
-		@{
+ 		@{
 			List<SelectListItem> listItems = new List<SelectListItem>();
 			listItems.Add(new SelectListItem
 			{
@@ -100,7 +107,7 @@
 				Value = "Hourly",
 			});
 		}
-		<input id="salaryType" type="text" class="form-control" />
+		@Html.DropDownListFor(Model => Model.SalaryType, listItems, "-- Select Salary Type --")
 	</div>
 	<div class="col-md-1"></div>
 </div>
@@ -110,7 +117,7 @@
 		<label>Hire Date</label>
 	</div>
 	<div class="col-md-3">
-		<input id="hireDate" type="text" class="form-control" />
+		<input id="hireDate" type="date" class="form-control" />
 	</div>
 	<div class="col-md-2">
 		<label>Available Hours</label>

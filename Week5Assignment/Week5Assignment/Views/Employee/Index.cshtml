@@ -1,4 +1,12 @@
 ﻿@model Week5Assignment.Models.EmployeeDisplayModel
+
+@{
+	if (Session["userID"] == null)
+	{
+		Response.Redirect("/Login/Login");
+	}
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -15,7 +23,7 @@
 					<tr>
 						<th>Employee ID</th>
 						<th>First Name</th>
-						<th>Middle Name</th>
+						<th>Middle Initial</th>
 						<th>Last Name</th>
 						<th>Hire Date</th>
 						<th>Salary</th>
@@ -27,35 +35,35 @@
 				<tbody>
 					@foreach (var employee in Model.Employee)
 					{
-					<tr>
-						<td>
-							@employee.EmployeeID
-						</td>
-						<td>
-							@employee.FirstName
-						</td>
-						<td>
-							@employee.MiddleName
-						</td>
-						<td>
-							@employee.LastName
-						</td>
-						<td>
-							@employee.HireDateString
-						</td>
-						<td>
-							@employee.SalaryString
-						</td>
-						<td>
-							@employee.SalaryType
-						</td>
-						<td>
-							@employee.JobTitle
-						</td>
-						<td>
-							@employee.Department
-						</td>
-					</tr>
+						<tr>
+							<td>
+								@employee.EmployeeID
+							</td>
+							<td>
+								@employee.FirstName
+							</td>
+							<td>
+								@employee.MiddleInitial
+							</td>
+							<td>
+								@employee.LastName
+							</td>
+							<td>
+								@employee.HireDateString
+							</td>
+							<td>
+								@employee.SalaryString
+							</td>
+							<td>
+								@employee.SalaryType
+							</td>
+							<td>
+								@employee.JobTitle
+							</td>
+							<td>
+								@employee.Department
+							</td>
+						</tr>
 					}
 				</tbody>
 			</table>

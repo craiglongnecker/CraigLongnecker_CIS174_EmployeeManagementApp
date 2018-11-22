@@ -3,9 +3,7 @@ using Week5Assignment.domain.Entities;
 namespace Week5Assignment.domain.Migrations
 {
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Week5Assignment.domain.EmployeeContext>
     {

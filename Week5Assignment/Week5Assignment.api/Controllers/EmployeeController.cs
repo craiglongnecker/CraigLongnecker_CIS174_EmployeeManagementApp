@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Week5Assignment.api.Models;
-using Week5Assignment.domain;
 using Week5Assignment.share.Orchestrator;
 using Week5Assignment.share.ViewModels;
 
