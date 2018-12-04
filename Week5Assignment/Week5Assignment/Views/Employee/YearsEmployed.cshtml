@@ -1,0 +1,57 @@
+﻿@model Week5Assignment.Models.EmployeeDisplayModel
+
+@{
+	if (Session["userID"] == null)
+	{
+		Response.Redirect("/Login/Login");
+	}
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Employees: Years Employed and Anniversaries</title>
+</head>
+<body>
+	<div class="container">
+		<h2>Employees: Years Employed and Anniversaries</h2>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Department</th>
+						<th>Years of Employment</th>
+						<th>Last Anniversary</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var employee in Model.Employee)
+					{
+					<tr>
+						<td>
+							@employee.FirstName
+						</td>
+						<td>
+							@employee.LastName
+						</td>
+						<td>
+							@employee.Department
+						</td>
+						<td>
+							@employee.YearsSinceHired
+						</td>
+						<td>
+							@employee.Anniversary
+						</td>
+					</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
