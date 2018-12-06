@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="EmployeeContext.cs" />
     <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\ErrorLog.cs" />
     <Compile Include="Entities\Login.cs" />
     <Compile Include="Migrations\201810032150093_InitialDatabaseCreationWithEmployees.cs" />
     <Compile Include="Migrations\201810032150093_InitialDatabaseCreationWithEmployees.Designer.cs">

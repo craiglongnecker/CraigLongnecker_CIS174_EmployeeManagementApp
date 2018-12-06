@@ -10,11 +10,13 @@ namespace Week5Assignment.Controllers
     public class LoginController : Controller
     {
         // GET: Login
+        [HandleError]
         public ActionResult Login()
         {
             return View();
         }
 
+        [HandleError]
         [HttpPost]
         public ActionResult Authorize(Week5Assignment.Models.User userModel)
         {
@@ -36,6 +38,7 @@ namespace Week5Assignment.Controllers
             }
         }
 
+        [HandleError]
         public string EncryptString(string encryptString)
         {
             string EncryptionKey = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -59,11 +62,13 @@ namespace Week5Assignment.Controllers
             return encryptString;
         }
 
+        [HandleError]
         private static void NewMethod(string encryptString, CryptoStream cs)
         {
             cs.Write(buffer: Encoding.Unicode.GetBytes(encryptString), offset: 0, count: Encoding.Unicode.GetBytes(encryptString).Length);
         }
 
+        [HandleError]
         public ActionResult LogOut()
         {
             int userId = (int)Session["userID"];

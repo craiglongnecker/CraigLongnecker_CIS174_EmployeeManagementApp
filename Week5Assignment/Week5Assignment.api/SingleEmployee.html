@@ -1,0 +1,36 @@
+﻿
+<html>
+<head>
+	<title>Single Employee Record</title>
+</head>
+<body>
+
+	<div>
+		<h2>Search by EmployeeID</h2>
+
+		<input type="text" size="5" id="empId" />
+		<input type="button" value="Search For Employee" onclick="find();" />
+
+		<p id="se"></p>
+	</div>
+	<script src="Scripts/jquery-3.1.1.js"></script>
+	<script type="text/javascript">
+
+		var uri = 'api/v1/singleemployee';
+
+		function formatItem(item) {
+			return 'First Name: ' + item.FirstName + '. Middle Name: ' + item.MiddleName + '. Last Name: ' + item.LastName + 'Date of Birth: ' + item.BirthDate + '. Department: ' + item.Department;
+		}
+		function find() {
+			var id = $('#empId').val();
+			$.getJSON(uri + '/' + id)
+				.done(function (data) {
+					$('#se').text(formatItem(data));
+				})
+				.fail(function (jqXHR, textStatus, err) {
+					$('#singleemployeemodel').text('Error 404' + err);
+				})
+		}
+	</script>
+</body>
+</html>  

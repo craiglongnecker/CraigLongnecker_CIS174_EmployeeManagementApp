@@ -17,6 +17,7 @@ namespace Week5Assignment.Controllers
         }
 
         // GET: Employee
+        [HandleError]
         public async Task<ActionResult> Index()
         {
         
@@ -27,6 +28,7 @@ namespace Week5Assignment.Controllers
             return View(employeeDisplayModel);
         }
 
+        [HandleError]
         public async Task<ActionResult> Create(CreateEmployeeModel employee)
         {
             if(string.IsNullOrWhiteSpace(employee.FirstName))
@@ -49,11 +51,13 @@ namespace Week5Assignment.Controllers
             return View();
         }
 
+        [HandleError]
         public ActionResult Update()
         {
             return View();
         }
 
+        [HandleError]
         public async Task<JsonResult> UpdateEmployee(UpdateEmployeeModel employee)
         {
             if (employee.EmployeeID == Guid.Empty)
@@ -77,13 +81,15 @@ namespace Week5Assignment.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
+        [HandleError]
         public async Task<JsonResult> Search(string searchString)
         {
             var viewModel = await _employeeOrchestrator.SearchEmployee(searchString);
 
             return Json(viewModel, JsonRequestBehavior.AllowGet);
         }
-  
+
+        [HandleError]
         public async Task<ActionResult> YearsEmployed()
         {
 
