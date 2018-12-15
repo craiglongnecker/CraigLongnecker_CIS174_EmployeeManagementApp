@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>All Employees</title>
+</head>
+<body>
+  <h2>All Employees</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <td>Employee ID</td>
+        <td>First Name</td>
+        <td>Middle Name</td>
+        <td>Last Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees" [class.selected]="employee === selectedEmployee"
+          (click)="onSelected(employee)">
+        <td>{{employee.EmployeeId}}</td>
+        <td>{{employee.FirstName}}</td>
+        <td>{{employee.MiddleName}}</td>
+        <td>{{employee.LastName}}</td>
+      </tr>
+      <app-getsingleemployee [employee]="selectedEmployee"></app-getsingleemployee>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -4,7 +4,7 @@ namespace Week5Assignment.api.Models
 {
     public class EmployeeModel
     {
-        public Guid EmployeeID { get; set; }
+        public int EmployeeID { get; set; }
         public String FirstName { get; set; }
         public String MiddleName { get; set; }
         public String LastName { get; set; }

@@ -36,7 +36,7 @@ namespace Week5Assignment.Controllers
 
             var updateCount = await _employeeOrchestrator.CreateEmployee(new EmployeeViewModel
             {
-                EmployeeID = Guid.NewGuid(),
+                EmployeeID = employee.EmployeeID,
                 FirstName = employee.FirstName,
                 MiddleName = employee.MiddleName,
                 LastName = employee.LastName,

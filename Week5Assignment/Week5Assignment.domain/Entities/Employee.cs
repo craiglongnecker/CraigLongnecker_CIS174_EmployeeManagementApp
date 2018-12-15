@@ -33,6 +33,8 @@ namespace Week5Assignment.domain.Entities
         public Decimal Salary { get; set; }
         public SalaryType SalaryType { get; set; }
         public String AvailableHours { get; set; }
+        public int EmployeeNum { get; set; }
+        public String BirthDate1 { get; set; }
     }
     public enum SalaryType
     {

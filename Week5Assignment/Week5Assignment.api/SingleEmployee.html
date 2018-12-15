@@ -6,7 +6,7 @@
 <body>
 
 	<div>
-		<h2>Search by EmployeeID</h2>
+		<h2>Search by Employee Number</h2>
 
 		<input type="text" size="5" id="empId" />
 		<input type="button" value="Search For Employee" onclick="find();" />
@@ -19,16 +19,16 @@
 		var uri = 'api/v1/singleemployee';
 
 		function formatItem(item) {
-			return 'First Name: ' + item.FirstName + '. Middle Name: ' + item.MiddleName + '. Last Name: ' + item.LastName + 'Date of Birth: ' + item.BirthDate + '. Department: ' + item.Department;
+			return 'First Name: ' + item.FirstName + '. Middle Name: ' + item.MiddleName + '. Last Name: ' + item.LastName + 'Date of Birth: ' + item.BirthDate1 + '. Department: ' + item.Department;
 		}
 		function find() {
-			var id = $('#empId').val();
+			var id = $('#getemployee').val();
 			$.getJSON(uri + '/' + id)
 				.done(function (data) {
-					$('#se').text(formatItem(data));
+					$('#getbyemployeeid').text(formatItem(data));
 				})
 				.fail(function (jqXHR, textStatus, err) {
-					$('#singleemployeemodel').text('Error 404' + err);
+					$('#getbyemployeeid').text('Error 404' + err);
 				})
 		}
 	</script>

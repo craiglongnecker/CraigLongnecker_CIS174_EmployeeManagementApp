@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Get Single Employee</title>
+</head>
+<body>
+  <div *ngIf="employee">
+    <h2>{{employee.FirstName}}Details</h2>
+    <div><span>Id:</span>{{employee.EmployeeId}}</div>
+    <div>
+      <label>
+        First Name:
+        <input[(ngModel)]="employee.FirstName" placeholder="First Name" />
+      </label>
+      <label>
+        Middle Name:
+        <input[(ngModel)]="employee.MiddleName" placeholder="Middle Name" />
+      </label>
+      <label>
+        Last Name:
+        <input[(ngModel)]="employee.LastName" placeholder="Last Name" />
+      </label>
+      <label>
+        Birth Date:
+        <input[(ngModel)]="employee.BirthDate" placeholder="Birth Date" />
+      </label>
+      <label>
+        Department:
+        <input[(ngModel)]="employee.Department" placeholder="Department" />
+      </label>
+    </div>
+  </div>
+</body>
+</html>

@@ -8,13 +8,13 @@
 		<h2>All Employees</h2>
 		<table id="allemployeesmodel" cellpadding="2" cellspacing="2" border="1" width="200">
 			<tr>
-				<td style="background-color: gray; color: white">EmployeeID</td>
+				<td style="background-color: gray; color: white">Employee Number</td>
 				<td style="background-color: gray; color: white">Name</td>
 			</tr>
 		</table>
 	</div>
 
-	<script src="Scripts/jquery-3.1.1.js"></script>
+	<script src="Scripts/jquery-3.3.1.js"></script>
 	<script type="text/javascript">
 
 		var uri = 'api/allemployees';
@@ -22,7 +22,7 @@
 			$.getJSON(uri)
 				.done(function (data) {
 					$.each(data, function (key, item) {
-						$('#allemployeesmodel').append("<tr><td>" + item.EmployeeID + "</td>" + "<td>" + item.FirstName + ' ' + item.MiddleName + ' ' + item.LastName + "</td></tr>");
+						$('#allemployeesmodel').append("<tr><td>" + item.EmployeeNum + "</td>" + "<td>" + item.FirstName + ' ' + item.MiddleName + ' ' + item.LastName + "</td></tr>");
 					});
 				});
 		});

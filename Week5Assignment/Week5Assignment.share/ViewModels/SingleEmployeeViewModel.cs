@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Week5Assignment.api.Models
+namespace Week5Assignment.share.ViewModels
 {
-    public class SingleEmployeeModel
+    public class SingleEmployeeViewModel
     {
         public int EmployeeNum { get; set; }
         public String FirstName { get; set; }
